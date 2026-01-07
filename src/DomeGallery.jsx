@@ -1,33 +1,42 @@
 import { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
 
+// Import all images from assets
+import nifemiImg from './assets/nifemi.jpeg';
+import coverwireImg from './assets/coverwire.jpeg';
+import meImg from './assets/me.jpeg';
+import groupImg from './assets/Group.jpeg';
+import nifCodingImg from './assets/nif-nif coding.png';
+import slantedViewImg from './assets/slanted-view.png';
+import kitchenImg from './assets/kitchen.png';
+
 const DEFAULT_IMAGES = [
   {
-    src: 'https://github.com/mushyRumble2286/smart-lunchbox/blob/main/src/assets/nifemi.jpeg',
+    src: nifemiImg,
     alt: 'Abstract art'
   },
   {
-    src: 'https://github.com/mushyRumble2286/smart-lunchbox/blob/main/src/assets/coverwire.jpeg',
+    src: coverwireImg,
     alt: 'Modern sculpture'
   },
   {
-    src: 'https://github.com/mushyRumble2286/smart-lunchbox/blob/main/src/assets/me.jpeg',
+    src: meImg,
     alt: 'Digital artwork'
   },
   {
-    src: 'https://github.com/mushyRumble2286/smart-lunchbox/blob/main/src/assets/Group.jpeg',
+    src: groupImg,
     alt: 'Contemporary art'
   },
   {
-    src: 'https://github.com/mushyRumble2286/smart-lunchbox/blob/main/src/assets/nif-nif%20coding.png',
+    src: nifCodingImg,
     alt: 'Geometric pattern'
   },
   {
-    src: 'https://github.com/mushyRumble2286/smart-lunchbox/blob/main/src/assets/slanted-view.png',
+    src: slantedViewImg,
     alt: 'Textured surface'
   },
   {
-    src: 'https://github.com/mushyRumble2286/smart-lunchbox/blob/main/src/assets/kitchen.png',
+    src: kitchenImg,
     alt: 'Social media image'
   }
 ];
