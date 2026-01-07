@@ -1,7 +1,23 @@
 import ColorBends from '../ColorBends';
 import logo from '/src/assets/logo.png';
+import picnicImg from '/src/assets/picnic.png';
 import PillNav from '../PillNav';
 import { useEffect, useRef, useState } from 'react';
+
+// Custom animation styles for rotating broken circle
+const rotationAnimation = `
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+`;
 
 const impactCards = [
   {
@@ -109,17 +125,19 @@ const appFeatureCards = [
 
 function FeatureCard({ card }) {
   return (
-    <div className="group relative bg-gradient-to-br from-black/60 via-black/40 to-black/60 backdrop-blur-xl border border-white/20 rounded-2xl p-3 hover:border-amber-500/60 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 hover:scale-105 hover:-translate-y-1 font-['Google_Sans']">
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-yellow-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute inset-[1px] bg-gradient-to-br from-white/5 via-transparent to-transparent rounded-2xl" />
+    <div className="group relative bg-gradient-to-br from-black/60 via-black/40 to-black/60 backdrop-blur-xl border border-white/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:border-amber-500/60 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 hover:scale-105 font-['Google_Sans'] h-24 sm:h-28 flex items-center">
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-yellow-500/10 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-[1px] bg-gradient-to-br from-white/5 via-transparent to-transparent rounded-xl sm:rounded-2xl" />
       
-      <div className="relative z-10">
-        <div className="text-2xl sm:text-3xl mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">{card.icon}</div>
-        <h3 className="text-xs sm:text-sm font-bold text-white mb-1 sm:mb-2 group-hover:text-amber-300 transition-colors duration-300">{card.title}</h3>
-        <p className="text-xs text-white/70 leading-relaxed group-hover:text-white/90 transition-colors duration-300">{card.description}</p>
+      <div className="relative z-10 flex items-center gap-3 sm:gap-4 w-full">
+        <div className="text-2xl sm:text-3xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 flex-shrink-0">{card.icon}</div>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-amber-300 transition-colors duration-300">{card.title}</h3>
+          <p className="text-xs sm:text-sm text-white/70 leading-relaxed group-hover:text-white/90 transition-colors duration-300 line-clamp-2">{card.description}</p>
+        </div>
       </div>
       
-      <div className="absolute top-2 right-2 w-2 h-2 bg-gradient-to-br from-amber-500/60 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute top-3 right-3 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-gradient-to-br from-amber-500/60 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </div>
   );
 }
@@ -150,7 +168,9 @@ export default function Innovation({ onNavClick }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-screen overflow-hidden bg-black">
+    <>
+      <style>{rotationAnimation}</style>
+      <div ref={containerRef} className="relative w-full h-screen overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         <ColorBends
           colors={["#f4c430", "#d4a017"]}
@@ -188,25 +208,89 @@ export default function Innovation({ onNavClick }) {
         />
       </nav>
 
-      <div className="relative z-10 flex flex-col items-center px-2 sm:px-4 pt-20 sm:pt-24 pb-8 space-y-8 overflow-hidden font-['Google_Sans']">
-        <div className="max-w-6xl w-full">
-          <h2 className="text-lg sm:text-xl font-bold text-center text-white mb-4">Core Features</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
-            {coreFeatureCards.map((card) => (
-              <FeatureCard key={card.id} card={card} />
-            ))}
+      <div className="relative z-10 w-full h-screen overflow-hidden font-['Google_Sans']">
+        <div className="relative w-full h-full">
+          {/* Center Image with Broken Rotating Circle */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96">
+            {/* Broken Rotating Circle - Larger radius around image */}
+            <svg className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] animate-spin-slow pointer-events-none z-10"
+                 viewBox="0 0 200 200"
+                 style={{ animationDuration: '20s' }}>
+              <defs>
+                <linearGradient id="brokenCircleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#f4c430" stopOpacity="1" />
+                  <stop offset="50%" stopColor="#d4a017" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#b8860b" stopOpacity="1" />
+                </linearGradient>
+              </defs>
+              {/* Single broken circle with dashes - larger radius */}
+              <circle 
+                cx="100" 
+                cy="100" 
+                r="95" 
+                fill="none" 
+                stroke="url(#brokenCircleGrad)" 
+                strokeWidth="2"
+                strokeDasharray="20 15"
+                strokeLinecap="round"
+                className="opacity-80"
+              />
+            </svg>
+            {/* Central Image */}
+            <div className="relative w-full h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/30 via-yellow-500/20 to-orange-500/30 rounded-full blur-3xl opacity-75" />
+              <img 
+                src={picnicImg} 
+                alt="SmartBox Product" 
+                className="relative w-full h-full object-cover rounded-full shadow-2xl shadow-amber-500/30 border-2 border-white/20"
+                style={{ objectPosition: 'center 30%' }}
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="max-w-4xl w-full">
-          <h2 className="text-lg sm:text-xl font-bold text-center text-white mb-4">App Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-3">
-            {appFeatureCards.map((card) => (
-              <FeatureCard key={card.id} card={card} />
-            ))}
+          {/* Core Features Scattered - Edges AND Middle */}
+          {/* Temperature Holding */}
+          <div className="absolute left-[2%] top-[15%] z-10 w-56 sm:w-72">
+            <FeatureCard card={coreFeatureCards[0]} />
+          </div>
+          
+          {/* Food Safety Monitoring */}
+          <div className="absolute right-[2%] top-[15%] z-10 w-56 sm:w-72">
+            <FeatureCard card={coreFeatureCards[1]} />
+          </div>
+          
+          {/* Rechargeable Power */}
+          <div className="absolute left-[12%] top-[42%] z-10 w-56 sm:w-72">
+            <FeatureCard card={coreFeatureCards[2]} />
+          </div>
+          
+          {/* Secure & Leak-Proof Design */}
+          <div className="absolute right-[15%] top-[42%] z-10 w-56 sm:w-72">
+            <FeatureCard card={coreFeatureCards[3]} />
+          </div>
+          
+          {/* Modular & Easy to Clean */}
+          <div className="absolute left-[75%] top-[65%] z-10 w-56 sm:w-72">
+            <FeatureCard card={coreFeatureCards[4]} />
+          </div>
+          
+          {/* Mobile App Control */}
+          <div className="absolute left-[5%] top-[65%] z-10 w-56 sm:w-72">
+            <FeatureCard card={coreFeatureCards[5]} />
+          </div>
+          
+          {/* Clear Battery Indication */}
+          <div className="absolute right-[20%] top-[85%] z-10 w-56 sm:w-72">
+            <FeatureCard card={coreFeatureCards[6]} />
+          </div>
+          
+          {/* Freshness Monitoring */}
+          <div className="absolute left-[25%] top-[85%] z-10 w-56 sm:w-72">
+            <FeatureCard card={coreFeatureCards[7]} />
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 }
