@@ -1,6 +1,6 @@
 import ColorBends from '../ColorBends';
 import logo from '/src/assets/logo.png';
-import picnicImg from '/src/assets/picnic.png';
+import picnicImg from '/picnic.png';
 import PillNav from '../PillNav';
 import { useEffect, useRef, useState } from 'react';
 
