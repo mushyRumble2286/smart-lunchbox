@@ -1,42 +1,34 @@
 import { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
 
-// Import all images from assets
-import nifemiImg from './assets/nifemi.jpeg';
-import coverwireImg from './assets/coverwire.jpeg';
-import meImg from './assets/me.jpeg';
-import groupImg from './assets/Group.jpeg';
-import nifCodingImg from './assets/nif-nif coding.png';
-import slantedViewImg from './assets/slanted-view.png';
-import kitchenImg from './assets/kitchen.png';
-
+// Image paths - use root paths for production hosting
 const DEFAULT_IMAGES = [
   {
-    src: nifemiImg,
+    src: '/nifemi.jpeg',
     alt: 'Abstract art'
   },
   {
-    src: coverwireImg,
+    src: '/coverwire.jpeg',
     alt: 'Modern sculpture'
   },
   {
-    src: meImg,
+    src: '/me.jpeg',
     alt: 'Digital artwork'
   },
   {
-    src: groupImg,
+    src: '/Group.jpeg',
     alt: 'Contemporary art'
   },
   {
-    src: nifCodingImg,
+    src: '/nif-nif%20coding.png',
     alt: 'Geometric pattern'
   },
   {
-    src: slantedViewImg,
+    src: '/slanted-view.png',
     alt: 'Textured surface'
   },
   {
-    src: kitchenImg,
+    src: '/kitchen.png',
     alt: 'Social media image'
   }
 ];
