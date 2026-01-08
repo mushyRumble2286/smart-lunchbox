@@ -125,15 +125,15 @@ const appFeatureCards = [
 
 function FeatureCard({ card }) {
   return (
-    <div className="group relative bg-gradient-to-br from-black/60 via-black/40 to-black/60 backdrop-blur-xl border border-white/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:border-amber-500/60 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 hover:scale-105 font-['Google_Sans'] h-24 sm:h-28 flex items-center">
+    <div className="group relative bg-gradient-to-br from-black/60 via-black/40 to-black/60 backdrop-blur-xl border border-white/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:border-amber-500/60 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 hover:scale-105 font-['Google_Sans'] h-28 sm:h-32 flex flex-col justify-center">
       <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-yellow-500/10 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="absolute inset-[1px] bg-gradient-to-br from-white/5 via-transparent to-transparent rounded-xl sm:rounded-2xl" />
       
-      <div className="relative z-10 flex items-center gap-3 sm:gap-4 w-full">
-        <div className="text-2xl sm:text-3xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 flex-shrink-0">{card.icon}</div>
+      <div className="relative z-10 flex items-start gap-3 sm:gap-4 w-full">
+        <div className="text-2xl sm:text-3xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 flex-shrink-0 mt-0.5">{card.icon}</div>
         <div className="flex-1 min-w-0">
           <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-amber-300 transition-colors duration-300">{card.title}</h3>
-          <p className="text-xs sm:text-sm text-white/70 leading-relaxed group-hover:text-white/90 transition-colors duration-300 line-clamp-2">{card.description}</p>
+          <p className="text-xs sm:text-sm text-white/70 leading-relaxed group-hover:text-white/90 transition-colors duration-300 line-clamp-3">{card.description}</p>
         </div>
       </div>
       
@@ -170,7 +170,7 @@ export default function Innovation({ onNavClick }) {
   return (
     <>
       <style>{rotationAnimation}</style>
-      <div ref={containerRef} className="relative w-full h-screen overflow-hidden bg-black">
+      <div ref={containerRef} className="relative w-full h-screen overflow-hidden bg-black font-['Google_Sans']">
       <div className="absolute inset-0 z-0">
         <ColorBends
           colors={["#f4c430", "#d4a017"]}
@@ -194,6 +194,7 @@ export default function Innovation({ onNavClick }) {
             { label: 'Home', href: '/hero' },
             { label: 'Problem', href: '/problem' },
             { label: 'Innovation', href: '/innovation' },
+            { label: 'Team', href: '/team' },
             { label: 'Gallery', href: '/gallery' },
             { label: 'Contact', href: '/contact' }
           ]}
@@ -250,42 +251,42 @@ export default function Innovation({ onNavClick }) {
 
           {/* Core Features Scattered - Edges AND Middle */}
           {/* Temperature Holding */}
-          <div className="absolute left-[2%] top-[15%] z-10 w-56 sm:w-72">
+          <div className="absolute left-[2%] top-[15%] z-10 w-64 sm:w-80">
             <FeatureCard card={coreFeatureCards[0]} />
           </div>
           
           {/* Food Safety Monitoring */}
-          <div className="absolute right-[2%] top-[15%] z-10 w-56 sm:w-72">
+          <div className="absolute right-[2%] top-[15%] z-10 w-64 sm:w-80">
             <FeatureCard card={coreFeatureCards[1]} />
           </div>
           
           {/* Rechargeable Power */}
-          <div className="absolute left-[12%] top-[42%] z-10 w-56 sm:w-72">
+          <div className="absolute left-[10%] top-[42%] z-10 w-64 sm:w-80">
             <FeatureCard card={coreFeatureCards[2]} />
           </div>
           
           {/* Secure & Leak-Proof Design */}
-          <div className="absolute right-[15%] top-[42%] z-10 w-56 sm:w-72">
+          <div className="absolute right-[12%] top-[42%] z-10 w-64 sm:w-80">
             <FeatureCard card={coreFeatureCards[3]} />
           </div>
           
           {/* Modular & Easy to Clean */}
-          <div className="absolute left-[75%] top-[65%] z-10 w-56 sm:w-72">
+          <div className="absolute left-[72%] top-[65%] z-10 w-64 sm:w-80">
             <FeatureCard card={coreFeatureCards[4]} />
           </div>
           
           {/* Mobile App Control */}
-          <div className="absolute left-[5%] top-[65%] z-10 w-56 sm:w-72">
+          <div className="absolute left-[3%] top-[65%] z-10 w-64 sm:w-80">
             <FeatureCard card={coreFeatureCards[5]} />
           </div>
           
           {/* Clear Battery Indication */}
-          <div className="absolute right-[20%] top-[85%] z-10 w-56 sm:w-72">
+          <div className="absolute right-[18%] top-[85%] z-10 w-64 sm:w-80">
             <FeatureCard card={coreFeatureCards[6]} />
           </div>
           
           {/* Freshness Monitoring */}
-          <div className="absolute left-[25%] top-[85%] z-10 w-56 sm:w-72">
+          <div className="absolute left-[22%] top-[85%] z-10 w-64 sm:w-80">
             <FeatureCard card={coreFeatureCards[7]} />
           </div>
         </div>

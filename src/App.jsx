@@ -3,14 +3,18 @@ import { motion, AnimatePresence } from "motion/react";
 import Hero from "./components/hero";
 import Problem from "./components/problem";
 import Innovation from "./components/innovation";
+import Team from "./components/team";
 import Gallery from "./components/gallery";
+import Contact from "./components/contact";
 import './App.css'
 
 const SECTIONS = [
   { id: 'hero', component: (onNavClick) => <Hero onNavClick={onNavClick} /> },
   { id: 'problem', component: (onNavClick) => <Problem onNavClick={onNavClick} /> },
   { id: 'innovation', component: (onNavClick) => <Innovation onNavClick={onNavClick} /> },
+  { id: 'team', component: (onNavClick) => <Team onNavClick={onNavClick} /> },
   { id: 'gallery', component: (onNavClick) => <Gallery onNavClick={onNavClick} /> },
+  { id: 'contact', component: (onNavClick) => <Contact onNavClick={onNavClick} /> },
 ];
 
 export default function App() {

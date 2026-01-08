@@ -94,6 +94,9 @@
 .large-bento-text {
     line-height: 1.8;
     font-size: 1.1rem;
+    overflow-y: auto;
+    max-height: 100%;
+    padding-right: 0.5rem;
 }
 
 .large-bento-text p {
@@ -109,6 +112,25 @@
     color: #f4c430;
     font-weight: 600;
     display: inline-block;
+}
+
+/* Custom Scrollbar for Large Bento Box */
+.large-bento-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+.large-bento-text::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.large-bento-text::-webkit-scrollbar-thumb {
+    background: rgba(244, 196, 48, 0.6);
+    border-radius: 4px;
+}
+
+.large-bento-text::-webkit-scrollbar-thumb:hover {
+    background: rgba(244, 196, 48, 0.8);
 }
 
 /* Fade-in animation for smaller bento boxes */

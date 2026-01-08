@@ -3,7 +3,7 @@ import PillNav from '../PillNav';
 import logo from '/src/assets/logo.png';
 export default function Gallery({ onNavClick }) {
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
+    <div style={{ width: '100vw', height: '100vh' }} className="font-['Google_Sans']">
       <nav style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 1000 }}>
         <PillNav
           logo={logo}
@@ -12,6 +12,7 @@ export default function Gallery({ onNavClick }) {
             { label: 'Home', href: '/hero' },
             { label: 'Problem', href: '/problem' },
             { label: 'Innovation', href: '/innovation' },
+            { label: 'Team', href: '/team' },
             { label: 'Gallery', href: '/gallery' },
             { label: 'Contact', href: '/contact' }
           ]}

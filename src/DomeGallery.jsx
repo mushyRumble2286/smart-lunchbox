@@ -765,7 +765,7 @@ export default function DomeGallery({
       <style dangerouslySetInnerHTML={{ __html: cssStyles }} />
       <div
         ref={rootRef}
-        className="sphere-root relative w-full h-full"
+        className="sphere-root relative w-full h-full font-['Google_Sans']"
         style={{
           ['--segments-x']: segments,
           ['--segments-y']: segments,

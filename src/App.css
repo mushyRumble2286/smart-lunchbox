@@ -12,6 +12,7 @@
     padding: 0;
     overflow: hidden;
     background-color: #000;
+    font-family: 'Google Sans', 'Google_Sans', sans-serif;
   }
 
   #root {

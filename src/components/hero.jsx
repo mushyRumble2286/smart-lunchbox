@@ -30,6 +30,7 @@ export default function Hero({ onNavClick }) {
                     { label: 'Home', href: '/hero' },
                     { label: 'Problem', href: '/problem' },
                     { label: 'Innovation', href: '/innovation' },
+                    { label: 'Team', href: '/team' },
                     { label: 'Gallery', href: '/gallery' },
                     { label: 'Contact', href: '/contact' }
                 ]}
@@ -40,7 +41,7 @@ export default function Hero({ onNavClick }) {
                 pillColor="#f4c430"
                 hoveredPillTextColor="#ffffff"
                 pillTextColor="#ffffff"
-                onMobileMenuClick={onNavClick}
+                onNavClick={onNavClick}
                 />
         </nav>
         <div className="cont">
