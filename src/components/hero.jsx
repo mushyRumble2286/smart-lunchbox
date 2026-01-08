@@ -1,7 +1,5 @@
 import GradientBlinds from '../GradientBlinds';
 import DecryptedText from '../DecryptedText';
-import PillNav from '../PillNav';
-import logo from '/src/assets/logo.png';
 import RotatingText from '../RotatingText';
 import './hero.css'
 
@@ -22,28 +20,6 @@ export default function Hero({ onNavClick }) {
             shineDirection="left"
             mixBlendMode="lighten"
         />
-        <nav>
-                <PillNav
-                logo={logo}
-                logoAlt="Company Logo"
-                items={[
-                    { label: 'Home', href: '/hero' },
-                    { label: 'Problem', href: '/problem' },
-                    { label: 'Innovation', href: '/innovation' },
-                    { label: 'Team', href: '/team' },
-                    { label: 'Gallery', href: '/gallery' },
-                    { label: 'Contact', href: '/contact' }
-                ]}
-                activeHref="/hero"
-                className="custom-nav"
-                ease="elastic3.easeOut"
-                baseColor="#1a1f3a "
-                pillColor="#f4c430"
-                hoveredPillTextColor="#ffffff"
-                pillTextColor="#ffffff"
-                onNavClick={onNavClick}
-                />
-        </nav>
         <div className="cont">
             <h1>
                 <div style={{ marginTop: '4rem' }}>
@@ -62,7 +38,7 @@ export default function Hero({ onNavClick }) {
                 </div>
                 <div className="rotate">
                 <RotatingText
-                    texts={['Food Intelligence', 'Smart Eating', 'Dietetics', 'Personalized Nutrition']}
+                    texts={['Food Intelligence', 'Smart Eating', 'Dietetics', 'Nutrition']}
                     mainClassName="px-2 sm:px-2 md:px-3 bg-[#f4c430] text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                     staggerFrom={"last"}
                     initial={{ y: "100%" }}

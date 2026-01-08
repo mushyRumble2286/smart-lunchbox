@@ -1,7 +1,5 @@
 import ColorBends from '../ColorBends';
-import logo from '/src/assets/logo.png';
 import picnicImg from '/picnic.png';
-import PillNav from '../PillNav';
 import { useEffect, useRef, useState } from 'react';
 
 // Custom animation styles for rotating broken circle
@@ -170,7 +168,7 @@ export default function Innovation({ onNavClick }) {
   return (
     <>
       <style>{rotationAnimation}</style>
-      <div ref={containerRef} className="relative w-full h-screen overflow-hidden bg-black font-['Google_Sans']">
+      <div ref={containerRef} className="relative w-full min-h-screen overflow-y-auto overflow-x-hidden bg-black font-['Google_Sans']">
       <div className="absolute inset-0 z-0">
         <ColorBends
           colors={["#f4c430", "#d4a017"]}
@@ -186,32 +184,10 @@ export default function Innovation({ onNavClick }) {
         />
       </div>
 
-      <nav className="relative z-30 flex justify-center">
-        <PillNav
-          logo={logo}
-          logoAlt="Company Logo"
-          items={[
-            { label: 'Home', href: '/hero' },
-            { label: 'Problem', href: '/problem' },
-            { label: 'Innovation', href: '/innovation' },
-            { label: 'Team', href: '/team' },
-            { label: 'Gallery', href: '/gallery' },
-            { label: 'Contact', href: '/contact' }
-          ]}
-          activeHref="/innovation"
-          className="custom-nav"
-          ease="elastic3.easeOut"
-          baseColor="#1a1f3a "
-          pillColor="#f4c430"
-          hoveredPillTextColor="#ffffff"
-          pillTextColor="#ffffff"
-          onNavClick={onNavClick}
-        />
-      </nav>
-
       <div className="relative z-10 w-full font-['Google_Sans']">
-          {/* Mobile stacked layout for small devices */}
-          <div className="md:hidden flex flex-col items-center gap-4 px-4 py-8">
+          <h1 className="page-heading">Our Solution</h1>
+          {/* Mobile stacked layout for small devices (laptops and below) */}
+          <div className="lg:hidden flex flex-col items-center gap-4 px-4 py-8">
             {/* Center Image with Broken Rotating Circle - smaller for mobile */}
             <div className="w-48 h-48 mb-4">
               {/* Broken Rotating Circle - Smaller radius for mobile */}
@@ -277,7 +253,7 @@ export default function Innovation({ onNavClick }) {
           </div>
 
           {/* Desktop absolute layout */}
-          <div className="hidden md:block relative w-full h-screen">
+          <div className="hidden lg:block relative w-full min-h-screen overflow-x-hidden">
             <div className="relative w-full h-full">
               {/* Center Image with Broken Rotating Circle */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96">

@@ -348,19 +348,175 @@
     font-weight: 100;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
     .problem-content {
-        top: 100px;
-        width: 95%;
-        padding: 1rem 1rem 0.5rem 1rem;
-        max-height: calc(100vh - 100px - 0.5rem);
+        top: 90px;
+        padding: 1.5rem;
+        height: calc(100vh - 110px);
+    }
+    
+    .counter-wrapper,
+    .million-counter-wrapper {
+        width: 220px;
+    }
+    
+    .counter-wrapper canvas {
+        transform: scale(0.85);
+    }
+    
+    .food-waste-main,
+    .food-contamination-main {
+        font-size: 1.2rem;
+    }
+    
+    .food-waste-secondary,
+    .food-waste-tertiary,
+    .food-contamination-secondary,
+    .food-contamination-tertiary {
+        font-size: 1rem;
+    }
+    
+    .million-number {
+        font-size: 3.8rem;
+    }
+    
+    .rolling-digit-item {
+        font-size: 3.8rem;
+    }
+    
+    .million-label {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .problem-content {
+        top: 80px;
+        padding: 1.25rem;
+        height: calc(100vh - 100px);
+    }
+    
+    .bento-grid {
+        gap: 1.5rem;
+    }
+    
+    .counter-wrapper,
+    .million-counter-wrapper {
+        width: 200px;
+    }
+    
+    .counter-wrapper canvas {
+        transform: scale(0.77);
+    }
+    
+    .food-waste-main,
+    .food-contamination-main {
+        font-size: 1.1rem;
+    }
+    
+    .food-waste-secondary,
+    .food-waste-tertiary,
+    .food-contamination-secondary,
+    .food-contamination-tertiary {
+        font-size: 0.95rem;
+    }
+    
+    .million-number {
+        font-size: 3.5rem;
+    }
+    
+    .rolling-digit-item {
+        font-size: 3.5rem;
+    }
+    
+    .million-label {
+        font-size: 2.2rem;
+    }
+    
+    .large-bento-text {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 1024px) {
+    .problem-content {
+        top: 75px;
+        padding: 1rem;
+        height: calc(100vh - 95px);
+    }
+    
+    .bento-grid {
+        gap: 1.25rem;
+    }
+    
+    .bento-box {
+        padding: 1.25rem;
+    }
+    
+    .counter-wrapper,
+    .million-counter-wrapper {
+        width: 180px;
+    }
+    
+    .counter-wrapper canvas {
+        transform: scale(0.69);
+    }
+    
+    .food-waste-content,
+    .food-contamination-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .food-waste-text,
+    .food-contamination-text {
+        gap: 0.75rem;
+    }
+    
+    .food-waste-main,
+    .food-contamination-main {
+        font-size: 1rem;
+    }
+    
+    .food-waste-secondary,
+    .food-waste-tertiary,
+    .food-contamination-secondary,
+    .food-contamination-tertiary {
+        font-size: 0.9rem;
+    }
+    
+    .million-number {
+        font-size: 3rem;
+    }
+    
+    .rolling-digit-item {
+        font-size: 3rem;
+    }
+    
+    .million-label {
+        font-size: 2rem;
+    }
+    
+    .large-bento-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 900px) {
+    .problem-content {
+        top: 70px;
+        width: 96%;
+        padding: 0.75rem;
+        height: calc(100vh - 85px);
     }
     
     .bento-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: auto;
         gap: 1rem;
-        max-height: calc(100vh - 100px - 0.5rem - 2rem);
     }
     
     .bento-box-small {
@@ -373,12 +529,189 @@
         grid-row: auto;
     }
     
-    .bento-title,
-    .bento-subtitle {
-        font-size: 1.25rem;
+    .counter-wrapper,
+    .million-counter-wrapper {
+        width: 160px;
     }
     
-    .bento-description {
+    .counter-wrapper canvas {
+        transform: scale(0.62);
+    }
+    
+    .food-waste-content,
+    .food-contamination-content {
+        flex-direction: row;
+        gap: 1rem;
+        text-align: left;
+    }
+    
+    .food-waste-main,
+    .food-contamination-main {
+        font-size: 0.95rem;
+    }
+    
+    .food-waste-secondary,
+    .food-waste-tertiary,
+    .food-contamination-secondary,
+    .food-contamination-tertiary {
+        font-size: 0.85rem;
+    }
+    
+    .million-number {
+        font-size: 2.5rem;
+    }
+    
+    .rolling-digit-item {
+        font-size: 2.5rem;
+    }
+    
+    .million-label {
+        font-size: 1.8rem;
+    }
+    
+    .large-bento-text {
+        font-size: 0.85rem;
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .problem-content {
+        top: 100px;
+        width: 95%;
+        padding: 1rem 1rem 0.5rem 1rem;
+        max-height: calc(100vh - 100px - 0.5rem);
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
+        flex: 1;
+        overflow-y: auto;
+        max-height: calc(100vh - 180px);
+    }
+    
+    .bento-box-small {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    
+    .bento-box-large {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    
+    .bento-box {
+        padding: 1rem;
+    }
+    
+    .food-waste-content,
+    .food-contamination-content {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+    
+    .counter-wrapper,
+    .million-counter-wrapper {
+        width: 140px;
+    }
+    
+    .counter-wrapper canvas {
+        transform: scale(0.54);
+    }
+    
+    .food-waste-main,
+    .food-contamination-main {
+        font-size: 1rem;
+    }
+    
+    .food-waste-secondary,
+    .food-waste-tertiary,
+    .food-contamination-secondary,
+    .food-contamination-tertiary {
+        font-size: 0.85rem;
+    }
+    
+    .million-number {
+        font-size: 2.2rem;
+    }
+    
+    .rolling-digit-item {
+        font-size: 2.2rem;
+    }
+    
+    .million-label {
+        font-size: 1.5rem;
+    }
+    
+    .large-bento-text {
         font-size: 0.9rem;
+        line-height: 1.6;
+        max-height: none;
+    }
+    
+    .large-bento-text p {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .problem-content {
+        top: 90px;
+        padding: 0.75rem;
+        width: 97%;
+    }
+    
+    .bento-grid {
+        gap: 0.75rem;
+        max-height: calc(100vh - 160px);
+    }
+    
+    .bento-box {
+        padding: 0.75rem;
+        border-radius: 1rem;
+    }
+    
+    .counter-wrapper,
+    .million-counter-wrapper {
+        width: 120px;
+    }
+    
+    .counter-wrapper canvas {
+        transform: scale(0.46);
+    }
+    
+    .food-waste-main,
+    .food-contamination-main {
+        font-size: 0.9rem;
+    }
+    
+    .food-waste-secondary,
+    .food-waste-tertiary,
+    .food-contamination-secondary,
+    .food-contamination-tertiary {
+        font-size: 0.75rem;
+    }
+    
+    .million-number {
+        font-size: 1.8rem;
+    }
+    
+    .rolling-digit-item {
+        font-size: 1.8rem;
+    }
+    
+    .million-label {
+        font-size: 1.2rem;
+    }
+    
+    .large-bento-text {
+        font-size: 0.8rem;
+        line-height: 1.5;
     }
 }

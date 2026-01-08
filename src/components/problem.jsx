@@ -1,6 +1,4 @@
 import ColorBends from '../ColorBends';
-import logo from '/src/assets/logo.png';
-import PillNav from '../PillNav';
 import './problem.css';
 import { useEffect, useRef, useState } from 'react';
 
@@ -261,27 +259,7 @@ export default function Problem({ onNavClick }){
         parallax={0.1}
         noise={0.1}
         />
-        <nav>
-                <PillNav
-                logo={logo}
-                logoAlt="Company Logo"
-                items={[
-                    { label: 'Home', href: '/hero' },
-                    { label: 'Problem', href: '/problem' },
-                    { label: 'Innovation', href: '/innovation' },
-                    { label: 'Gallery', href: '/gallery' },
-                    { label: 'Contact', href: '/contact' }
-                ]}
-                activeHref="/problem"
-                className="custom-nav"
-                ease="elastic3.easeOut"
-                baseColor="#1a1f3a "
-                pillColor="#f4c430"
-                hoveredPillTextColor="#ffffff"
-                pillTextColor="#ffffff"
-                onNavClick={onNavClick}
-                />
-        </nav>
+        <h1 className="page-heading">Our Problem</h1>
         <div className="problem-content">
             <div className="bento-grid">
                 <div className="bento-box bento-box-small food-waste-box">

@@ -22,6 +22,21 @@
   }
 }
 
+/* Single sticky navbar for the entire app */
+.app-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  background: rgba(15, 18, 37, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.5em 1em;
+}
+
 .zoom-container {
   position: relative;
   width: 100%;
@@ -37,4 +52,67 @@
   width: 100%;
   height: 100vh;
   will-change: transform, opacity;
+}
+
+/* Small screen mode - stacked layout with normal scrolling */
+.small-screen-mode.zoom-container {
+  height: auto !important;
+  min-height: 100vh;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  perspective: none !important;
+  padding-top: 70px; /* Account for fixed navbar */
+}
+
+.small-screen-mode .zoom-section {
+  position: relative !important;
+  height: auto !important;
+  min-height: 100vh;
+  transform: none !important;
+  opacity: 1 !important;
+  z-index: 1 !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+.small-screen-mode #root {
+  height: auto !important;
+  overflow: auto !important;
+}
+
+/* Body styles for small screen mode - allow scrolling */
+body.small-screen-body,
+html.small-screen-body {
+  overflow: auto !important;
+  height: auto !important;
+}
+
+body.small-screen-body #root {
+  height: auto !important;
+  overflow: auto !important;
+}
+
+/* Page heading for small screens */
+.page-heading {
+  display: none;
+  color: #f4c430;
+  font-family: 'Google Sans', 'Google_Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+  position: relative;
+  z-index: 20;
+}
+
+/* Show heading only on small screens (below 900px - when small-screen-mode kicks in) */
+.small-screen-mode .page-heading {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .page-heading {
+    display: block;
+  }
 }

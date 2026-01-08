@@ -1,6 +1,4 @@
 import ColorBends from '../ColorBends';
-import logo from '/src/assets/logo.png';
-import PillNav from '../PillNav';
 
 export default function Contact({ onNavClick }) {
   return (
@@ -17,28 +15,6 @@ export default function Contact({ onNavClick }) {
         parallax={0.1}
         noise={0.1}
       />
-      <nav style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 1000 }}>
-        <PillNav
-          logo={logo}
-          logoAlt="Company Logo"
-          items={[
-            { label: 'Home', href: '/hero' },
-            { label: 'Problem', href: '/problem' },
-            { label: 'Innovation', href: '/innovation' },
-            { label: 'Team', href: '/team' },
-            { label: 'Gallery', href: '/gallery' },
-            { label: 'Contact', href: '/contact' }
-          ]}
-          activeHref="/contact"
-          className="custom-nav"
-          ease="elastic3.easeOut"
-          baseColor="#1a1f3a"
-          pillColor="#f4c430"
-          hoveredPillTextColor="#ffffff"
-          pillTextColor="#ffffff"
-          onNavClick={onNavClick}
-        />
-      </nav>
       <div className="contact-content" style={{ 
         position: 'absolute', 
         top: '50%', 
@@ -54,8 +30,8 @@ export default function Contact({ onNavClick }) {
           Get in touch with us for more information about SmartBox.
         </p>
         <div style={{ marginTop: '2rem' }}>
-          <p>Email: info@smartbox.com</p>
-          <p>Phone: +1 (555) 123-4567</p>
+          <p>Email: <a href="mailto:conradteamfjn@gmail.com" style={{ color: '#f4c430', textDecoration: 'none' }}>conradteamfjn@gmail.com</a></p>
+          <p>Youtube Channel: <a href="https://youtu.be/rN--1ADAwNk" target="_blank" rel="noopener noreferrer" style={{ color: '#f4c430', textDecoration: 'none' }}>https://youtu.be/rN--1ADAwNk</a></p>
         </div>
       </div>
     </div>

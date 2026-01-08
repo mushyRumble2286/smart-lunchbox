@@ -1,6 +1,4 @@
 import ColorBends from '../ColorBends';
-import logo from '/src/assets/logo.png';
-import PillNav from '../PillNav';
 import './team.css';
 
 const teamMembers = [
@@ -72,28 +70,6 @@ export default function Team({ onNavClick }) {
                         noise={0.1}
                         />
             </div>
-            <nav className="team-nav">
-                <PillNav
-                    logo={logo}
-                    logoAlt="Company Logo"
-                    items={[
-                        { label: 'Home', href: '/hero' },
-                        { label: 'Problem', href: '/problem' },
-                        { label: 'Innovation', href: '/innovation' },
-                        { label: 'Team', href: '/team' },
-                        { label: 'Gallery', href: '/gallery' },
-                        { label: 'Contact', href: '/contact' }
-                    ]}
-                    activeHref="/team"
-                    className="custom-nav"
-                    ease="elastic3.easeOut"
-                    baseColor="#1a1f3a"
-                    pillColor="#f4c430"
-                    hoveredPillTextColor="#ffffff"
-                    pillTextColor="#ffffff"
-                    onNavClick={onNavClick}
-                />
-            </nav>
             <div className="team-content">
                 <div className="team-header">
                     <h1 className="team-title">Meet Our Team</h1>
