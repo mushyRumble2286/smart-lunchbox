@@ -27,7 +27,7 @@ export default function Contact({ onNavClick }) {
       }}>
         <h1 style={{ fontSize: '3rem', marginBottom: '2rem', color: '#f4c430' }}>Contact Us</h1>
         <p style={{ fontSize: '1.2rem', maxWidth: '600px', lineHeight: '1.6' }}>
-          Get in touch with us for more information about SmartBox.
+          Get in touch with us for more information about the FNJ SmartBox.
         </p>
         <div style={{ marginTop: '2rem' }}>
           <p>Email: <a href="mailto:conradteamfjn@gmail.com" style={{ color: '#f4c430', textDecoration: 'none' }}>conradteamfjn@gmail.com</a></p>
