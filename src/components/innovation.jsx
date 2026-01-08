@@ -262,16 +262,19 @@ export default function Innovation({ onNavClick }) {
           </div>
 
           {/* Desktop Zig-Zag Layout */}
-          <div className="hidden lg:flex lg:flex-row lg:items-center justify-center relative w-full min-h-screen overflow-x-hidden px-8">
+          <div className="hidden lg:flex lg:flex-row lg:items-center justify-center relative w-full min-h-screen overflow-x-visible px-8">
             <h1 className="page-heading lg:absolute lg:top-8 z-20 text-center">Our Solution</h1>
             
-            {/* Left side cards - 4 cards in zig-zag pattern */}
-            <div className="flex flex-col gap-8 lg:gap-16 w-80 lg:ml-20">
+            {/* Left side cards - 4 cards in zig-zag pattern - pull left */}
+            <div className="flex flex-col gap-8 lg:gap-20 w-80 lg:ml-0">
               {coreFeatureCards.slice(0, 4).map((card, index) => (
                 <div 
                   key={card.id}
-                  className={`w-full transition-all duration-500 hover:scale-105 ${index % 2 === 0 ? 'lg:-ml-24' : 'lg:ml-0'}`}
-                  style={{ marginTop: index % 2 === 0 ? '0' : '-40px' }}
+                  className={`w-full transition-all duration-500 hover:scale-105 ${index % 2 === 0 ? 'lg:-ml-28' : 'lg:ml-0'}`}
+                  style={{ 
+                    marginTop: index % 2 === 0 ? '0' : '-60px',
+                    marginLeft: index % 2 === 1 ? '180px' : '0'
+                  }}
                 >
                   <FeatureCard card={card} />
                 </div>
@@ -316,13 +319,16 @@ export default function Innovation({ onNavClick }) {
               </div>
             </div>
 
-            {/* Right side cards - 4 cards in zig-zag pattern */}
-            <div className="flex flex-col gap-8 lg:gap-16 w-80 lg:mr-20">
+            {/* Right side cards - 4 cards in zig-zag pattern - MIRRORED, pull toward center */}
+            <div className="flex flex-col gap-8 lg:gap-20 w-80 lg:mr-0">
               {coreFeatureCards.slice(4, 8).map((card, index) => (
                 <div 
                   key={card.id}
-                  className={`w-full transition-all duration-500 hover:scale-105 ${index % 2 === 0 ? 'lg:-ml-24' : 'lg:ml-0'}`}
-                  style={{ marginTop: index % 2 === 0 ? '0' : '-40px' }}
+                  className={`w-full transition-all duration-500 hover:scale-105 ${index % 2 === 1 ? 'lg:-ml-28' : 'lg:ml-0'}`}
+                  style={{ 
+                    marginTop: index % 2 === 0 ? '0' : '-60px',
+                    marginRight: index % 2 === 1 ? '0' : '180px'
+                  }}
                 >
                   <FeatureCard card={card} />
                 </div>

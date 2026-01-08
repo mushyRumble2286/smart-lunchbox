@@ -268,7 +268,7 @@ export default function Problem({ onNavClick }){
                             <PercentageCounter />
                         </div>
                         <div className={`food-waste-text ${isContentVisible ? 'fade-in-text' : ''}`}>
-                            <p className="food-waste-main"><strong>Of the food bought by american families get thrown away every year.</strong></p>
+                            <p className="food-waste-main"><strong>Of the food bought by American families get thrown away every year.</strong></p>
                             <p className="food-waste-secondary"><strong>That's a quarter of your grocery bill going straight into the trash.</strong></p>
                             <p className="food-waste-tertiary"><strong>Not because you don't want it - because you can't tell when it's actually gone bad.</strong></p>
                         </div>
