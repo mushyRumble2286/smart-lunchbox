@@ -209,88 +209,157 @@ export default function Innovation({ onNavClick }) {
         />
       </nav>
 
-      <div className="relative z-10 w-full h-screen overflow-hidden font-['Google_Sans']">
-        <div className="relative w-full h-full">
-          {/* Center Image with Broken Rotating Circle */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96">
-            {/* Broken Rotating Circle - Larger radius around image */}
-            <svg className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] animate-spin-slow pointer-events-none z-10"
-                 viewBox="0 0 200 200"
-                 style={{ animationDuration: '20s' }}>
-              <defs>
-                <linearGradient id="brokenCircleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#f4c430" stopOpacity="1" />
-                  <stop offset="50%" stopColor="#d4a017" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#b8860b" stopOpacity="1" />
-                </linearGradient>
-              </defs>
-              {/* Single broken circle with dashes - larger radius */}
-              <circle 
-                cx="100" 
-                cy="100" 
-                r="95" 
-                fill="none" 
-                stroke="url(#brokenCircleGrad)" 
-                strokeWidth="2"
-                strokeDasharray="20 15"
-                strokeLinecap="round"
-                className="opacity-80"
-              />
-            </svg>
-            {/* Central Image */}
-            <div className="relative w-full h-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/30 via-yellow-500/20 to-orange-500/30 rounded-full blur-3xl opacity-75" />
-              <img 
-                src={picnicImg} 
-                alt="SmartBox Product" 
-                className="relative w-full h-full object-cover rounded-full shadow-2xl shadow-amber-500/30 border-2 border-white/20"
-                style={{ objectPosition: 'center 30%' }}
-              />
+      <div className="relative z-10 w-full font-['Google_Sans']">
+          {/* Mobile stacked layout for small devices */}
+          <div className="md:hidden flex flex-col items-center gap-4 px-4 py-8">
+            {/* Center Image with Broken Rotating Circle - smaller for mobile */}
+            <div className="w-48 h-48 mb-4">
+              {/* Broken Rotating Circle - Smaller radius for mobile */}
+              <svg className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] animate-spin-slow pointer-events-none z-10"
+                   viewBox="0 0 200 200"
+                   style={{ animationDuration: '20s' }}>
+                <defs>
+                  <linearGradient id="brokenCircleGradMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#f4c430" stopOpacity="1" />
+                    <stop offset="50%" stopColor="#d4a017" stopOpacity="1" />
+                    <stop offset="100%" stopColor="#b8860b" stopOpacity="1" />
+                  </linearGradient>
+                </defs>
+                <circle 
+                  cx="100" 
+                  cy="100" 
+                  r="95" 
+                  fill="none" 
+                  stroke="url(#brokenCircleGradMobile)" 
+                  strokeWidth="2"
+                  strokeDasharray="20 15"
+                  strokeLinecap="round"
+                  className="opacity-80"
+                />
+              </svg>
+              {/* Central Image */}
+              <div className="relative w-full h-full">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/30 via-yellow-500/20 to-orange-500/30 rounded-full blur-3xl opacity-75" />
+                <img 
+                  src={picnicImg} 
+                  alt="SmartBox Product" 
+                  className="relative w-full h-full object-cover rounded-full shadow-2xl shadow-amber-500/30 border-2 border-white/20"
+                  style={{ objectPosition: 'center 30%' }}
+                />
+              </div>
+            </div>
+
+            {/* Stacked cards for mobile */}
+            <div className="w-full max-w-md">
+              <FeatureCard card={coreFeatureCards[0]} />
+            </div>
+            <div className="w-full max-w-md">
+              <FeatureCard card={coreFeatureCards[1]} />
+            </div>
+            <div className="w-full max-w-md">
+              <FeatureCard card={coreFeatureCards[2]} />
+            </div>
+            <div className="w-full max-w-md">
+              <FeatureCard card={coreFeatureCards[3]} />
+            </div>
+            <div className="w-full max-w-md">
+              <FeatureCard card={coreFeatureCards[4]} />
+            </div>
+            <div className="w-full max-w-md">
+              <FeatureCard card={coreFeatureCards[5]} />
+            </div>
+            <div className="w-full max-w-md">
+              <FeatureCard card={coreFeatureCards[6]} />
+            </div>
+            <div className="w-full max-w-md">
+              <FeatureCard card={coreFeatureCards[7]} />
             </div>
           </div>
 
-          {/* Core Features Scattered - Edges AND Middle */}
-          {/* Temperature Holding */}
-          <div className="absolute left-[2%] top-[15%] z-10 w-64 sm:w-80">
-            <FeatureCard card={coreFeatureCards[0]} />
-          </div>
-          
-          {/* Food Safety Monitoring */}
-          <div className="absolute right-[2%] top-[15%] z-10 w-64 sm:w-80">
-            <FeatureCard card={coreFeatureCards[1]} />
-          </div>
-          
-          {/* Rechargeable Power */}
-          <div className="absolute left-[10%] top-[42%] z-10 w-64 sm:w-80">
-            <FeatureCard card={coreFeatureCards[2]} />
-          </div>
-          
-          {/* Secure & Leak-Proof Design */}
-          <div className="absolute right-[12%] top-[42%] z-10 w-64 sm:w-80">
-            <FeatureCard card={coreFeatureCards[3]} />
-          </div>
-          
-          {/* Modular & Easy to Clean */}
-          <div className="absolute left-[72%] top-[65%] z-10 w-64 sm:w-80">
-            <FeatureCard card={coreFeatureCards[4]} />
-          </div>
-          
-          {/* Mobile App Control */}
-          <div className="absolute left-[3%] top-[65%] z-10 w-64 sm:w-80">
-            <FeatureCard card={coreFeatureCards[5]} />
-          </div>
-          
-          {/* Clear Battery Indication */}
-          <div className="absolute right-[18%] top-[85%] z-10 w-64 sm:w-80">
-            <FeatureCard card={coreFeatureCards[6]} />
-          </div>
-          
-          {/* Freshness Monitoring */}
-          <div className="absolute left-[22%] top-[85%] z-10 w-64 sm:w-80">
-            <FeatureCard card={coreFeatureCards[7]} />
+          {/* Desktop absolute layout */}
+          <div className="hidden md:block relative w-full h-screen">
+            <div className="relative w-full h-full">
+              {/* Center Image with Broken Rotating Circle */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96">
+                {/* Broken Rotating Circle - Larger radius around image */}
+                <svg className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] animate-spin-slow pointer-events-none z-10"
+                     viewBox="0 0 200 200"
+                     style={{ animationDuration: '20s' }}>
+                  <defs>
+                    <linearGradient id="brokenCircleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#f4c430" stopOpacity="1" />
+                      <stop offset="50%" stopColor="#d4a017" stopOpacity="1" />
+                      <stop offset="100%" stopColor="#b8860b" stopOpacity="1" />
+                    </linearGradient>
+                  </defs>
+                  {/* Single broken circle with dashes - larger radius */}
+                  <circle 
+                    cx="100" 
+                    cy="100" 
+                    r="95" 
+                    fill="none" 
+                    stroke="url(#brokenCircleGrad)" 
+                    strokeWidth="2"
+                    strokeDasharray="20 15"
+                    strokeLinecap="round"
+                    className="opacity-80"
+                  />
+                </svg>
+                {/* Central Image */}
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/30 via-yellow-500/20 to-orange-500/30 rounded-full blur-3xl opacity-75" />
+                  <img 
+                    src={picnicImg} 
+                    alt="SmartBox Product" 
+                    className="relative w-full h-full object-cover rounded-full shadow-2xl shadow-amber-500/30 border-2 border-white/20"
+                    style={{ objectPosition: 'center 30%' }}
+                  />
+                </div>
+              </div>
+
+              {/* Core Features Scattered - Edges AND Middle */}
+              {/* Temperature Holding */}
+              <div className="absolute left-[2%] top-[15%] z-10 w-64 sm:w-80">
+                <FeatureCard card={coreFeatureCards[0]} />
+              </div>
+              
+              {/* Food Safety Monitoring */}
+              <div className="absolute right-[2%] top-[15%] z-10 w-64 sm:w-80">
+                <FeatureCard card={coreFeatureCards[1]} />
+              </div>
+              
+              {/* Rechargeable Power */}
+              <div className="absolute left-[10%] top-[42%] z-10 w-64 sm:w-80">
+                <FeatureCard card={coreFeatureCards[2]} />
+              </div>
+              
+              {/* Secure & Leak-Proof Design */}
+              <div className="absolute right-[12%] top-[42%] z-10 w-64 sm:w-80">
+                <FeatureCard card={coreFeatureCards[3]} />
+              </div>
+              
+              {/* Modular & Easy to Clean */}
+              <div className="absolute left-[72%] top-[65%] z-10 w-64 sm:w-80">
+                <FeatureCard card={coreFeatureCards[4]} />
+              </div>
+              
+              {/* Mobile App Control */}
+              <div className="absolute left-[3%] top-[65%] z-10 w-64 sm:w-80">
+                <FeatureCard card={coreFeatureCards[5]} />
+              </div>
+              
+              {/* Clear Battery Indication */}
+              <div className="absolute right-[18%] top-[85%] z-10 w-64 sm:w-80">
+                <FeatureCard card={coreFeatureCards[6]} />
+              </div>
+              
+              {/* Freshness Monitoring */}
+              <div className="absolute left-[22%] top-[85%] z-10 w-64 sm:w-80">
+                <FeatureCard card={coreFeatureCards[7]} />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
     </>
   );

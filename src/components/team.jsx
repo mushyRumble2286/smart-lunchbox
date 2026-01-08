@@ -13,7 +13,7 @@ const teamMembers = [
     {
         name: "Jayden Chinedu-Okeke",
         role: "Product Designer",
-        image: "/jayden2.jpeg",
+        image: "/jayden.jpeg",
         bio: "Turns real-world problems into elegant, user-first designs that make innovation intuitive."
     },
     {
@@ -49,10 +49,6 @@ function TeamCard({ member }) {
                     <div className="team-bio">
                         <p>{member.bio}</p>
                     </div>
-                </div>
-                <div className="team-social">
-                    <a href="#" className="social-link">in</a>
-                    <a href="#" className="social-link">tw</a>
                 </div>
             </div>
         </div>

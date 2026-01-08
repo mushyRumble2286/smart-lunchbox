@@ -112,16 +112,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
     transition: transform 0.5s ease;
+}
+
+.favour-image {
+    object-position: top;
 }
 
 .team-card:hover .team-image {
     transform: scale(1.05);
-}
-
-/* Favour Bernard-Ekwe's image position adjustment */
-.favour-image {
-    transform: translateY(30px);
 }
 
 .team-image-overlay {
